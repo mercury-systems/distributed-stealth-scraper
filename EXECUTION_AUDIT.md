@@ -14,7 +14,7 @@ To resolve these runtime errors and successfully invoke the Heavy Engine, I impl
 
 1. **Environment Setup**: I created an isolated `venv` to protect my host environment and installed the missing dependencies.
 2. **Package Version Lock**: I downgraded the `playwright-stealth` library specifically to `1.0.6` (`pip install playwright-stealth==1.0.6`).
-3. **Setuptools Patch**: I installed `setuptools` to fix a missing `pkg_resources` error caused by `playwright-stealth` 1.0.6 dependencies.
+3. **Setuptools Patch**: I downgraded `setuptools` to version `69.5.1` (`pip install "setuptools<70"`) to resolve a `ModuleNotFoundError: No module named 'pkg_resources'` error. This error occurred because newer versions of setuptools (like 83.0.0) removed support for older deprecated APIs that `playwright-stealth` 1.0.6 requires.
 4. **Codebase Synchronization**: I updated `stealth_engine.py` back to using the correct `stealth_async` import signature to match the stabilized `1.0.6` version footprint.
 
 ## 🚀 Finalizing Updates
