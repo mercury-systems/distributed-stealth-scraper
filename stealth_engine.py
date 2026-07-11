@@ -280,7 +280,7 @@ class StealthScraper:
             await ctx.close()
         await self.heavy_engine.playwright.stop()
 
-async main():
+async def main():
     scraper = StealthScraper()
     targets = ["https://example.com/", "https://httpbin.org/status/200"]
     await scraper.run(targets)
