@@ -5,7 +5,7 @@ This document details the low-level systems logic, anti-bot evasion topologies, 
 ## ⚡ Executive Summary: The Resource Evasion Paradox
 Standard automated scrapers suffer from two structural bottlenecks: **high infrastructure costs** due to over-allocation of heavy browser engines (like headless Puppeteer/Playwright profiles) and **immediate access denial** due to un-spoofed TLS and network fingerprinting.
 
-The Stealth Scraper node implements a **Multi-Tier Escalation Matrix** to guarantee a flat resource budget while penetrating hardened Web Application Firewalls (WAFs) like Cloudflare Turnstile, Akamai, and DataDome.
+The Stealth Scraper node implements a **Multi-Tier Escalation Matrix** I designed to guarantee a flat resource budget while penetrating hardened Web Application Firewalls (WAFs) like Cloudflare Turnstile, Akamai, and DataDome.
 
 ---
 
