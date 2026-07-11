@@ -1,0 +1,4 @@
+browser_profiles_*
+*.db
+__pycache__/
+*.pyc
