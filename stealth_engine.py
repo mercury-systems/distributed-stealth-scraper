@@ -282,7 +282,15 @@ class StealthScraper:
 
 async def main():
     scraper = StealthScraper()
-    targets = ["https://example.com/", "https://httpbin.org/status/200"]
+    print("\n--- MQNA Stealth Scraper Execution Panel ---")
+    user_input = input("Enter target URL(s) separated by commas (or press Enter for defaults): ").strip()
+    
+    if user_input:
+        targets = [url.strip() for url in user_input.split(",") if url.strip()]
+    else:
+        targets = ["https://example.com/", "https://httpbin.org/status/200"]
+        
+    print(f"[*] Initializing multi-tier pipeline against: {targets}")
     await scraper.run(targets)
 
 if __name__ == "__main__":
