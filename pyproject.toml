@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+markers = [
+    "integration: marks tests requiring network or external services",
+    "heavy: marks tests requiring Playwright (heavy engine)",
+]
+asyncio_mode = "auto"
