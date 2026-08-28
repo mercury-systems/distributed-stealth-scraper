@@ -1,9 +1,6 @@
 from setuptools import setup, find_packages
 
-import os
-
-_readme = "README.md" if os.path.exists("README.md") else "README.rst"
-with open(_readme, "r", encoding="utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
