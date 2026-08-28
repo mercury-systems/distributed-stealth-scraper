@@ -55,7 +55,7 @@ class ProxyPool:
             available = self._get_available()
             if not available:
                 raise ProxyExhaustedError("All proxies exhausted")
-            available.sort(key=lambda s: s.avg_latency + random.uniform(0, 0.1))
+            available.sort(key=lambda s: (s.avg_latency, s.url))
             proxy = available[self._index % len(available)]
             self._index += 1
             proxy.last_used = time.time()
