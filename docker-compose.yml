@@ -1,0 +1,10 @@
+services:
+  stealth:
+    build: .
+    volumes:
+      - .:/app
+      - ./cookies.db:/app/cookies.db
+    environment:
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
