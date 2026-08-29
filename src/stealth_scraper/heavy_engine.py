@@ -92,7 +92,10 @@ class HeavyEngine:
                 ])
 
             page = await self._context.new_page()
-            response = await page.goto(url, wait_until="networkidle", timeout=self._timeout * 1000)
+            try:
+                response = await page.goto(url, wait_until="networkidle", timeout=self._timeout * 1000)
+            except Exception:
+                response = await page.goto(url, wait_until="domcontentloaded", timeout=self._timeout * 1000)
 
             challenge_selectors = [
                 "#cf-challenge-running", ".dd-captcha", ".px-captcha",

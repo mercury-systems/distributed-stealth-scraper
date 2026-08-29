@@ -1,9 +1,12 @@
-.PHONY: build test demo clean install install-heavy lint
+.PHONY: build test test-all demo clean install install-heavy lint
 
 build:
 	docker compose build
 
 test:
+	python3 -m pytest tests/ -v -m 'not integration'
+
+test-all:
 	python3 -m pytest tests/ -v
 
 demo:

@@ -20,7 +20,6 @@ logger = logging.getLogger(__name__)
 class ScraperConfig:
     max_retries: int = 3
     request_timeout: float = 30.0
-    proxy_timeout: float = 10.0
     proxy_list: Tuple[str, ...] = field(default_factory=tuple)
     cookie_db: str = "cookies.db"
     user_agent: str = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
@@ -56,7 +55,6 @@ class StealthScraper:
             self._proxy_pool, self._session_vault,
             max_retries=self._config.max_retries,
             request_timeout=self._config.request_timeout,
-            proxy_timeout=self._config.proxy_timeout,
         )
         await self._light.initialize()
 

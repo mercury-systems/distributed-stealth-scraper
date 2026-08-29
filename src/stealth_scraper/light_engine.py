@@ -26,12 +26,11 @@ class LightEngine:
     ]
 
     def __init__(self, proxy_pool: ProxyPool, session_vault: SessionVault,
-                 max_retries: int = 3, request_timeout: float = 30.0, proxy_timeout: float = 10.0):
+                 max_retries: int = 3, request_timeout: float = 30.0):
         self._proxy_pool = proxy_pool
         self._session_vault = session_vault
         self._max_retries = max_retries
         self._request_timeout = request_timeout
-        self._proxy_timeout = proxy_timeout
         self._session: Optional = None
 
     async def initialize(self):
